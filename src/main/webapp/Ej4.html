@@ -1,0 +1,14 @@
+<div ng-app="" ng-init="names=[
+{nombre:'Javier Bono',fecha:'26/08/1992',canastas:'360',rebotes:'210',asist:'96'},
+{nombre:'Carlos Menendez',fecha:'17/08/1994',canastas:'125',rebotes:'212',asist:'312'},
+{nombre:'Eduardo Benavides',fecha:'22/10/1992',canastas:'622',rebotes:'233',asist:'102'},
+{nombre:'Xavi Pandis',fecha:'3/09/1994',canastas:'421',rebotes:'122',asist:'52'},
+{nombre:'Alex Molero',fecha:'12/05/1993',canastas:'211',rebotes:'52',asist:'351'}]">
+
+    <p>Jugadores:</p>
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.nombre + ', ' + x.fecha + ', ' + x.canastas + ', ' + x.rebotes + ', ' + x.asist }}</li>
+    </ul>
+
+</div>

@@ -1,0 +1,33 @@
+<style>
+    body{font-family: sans-serif;}
+    h1{color:gray; font-size: 40px;}
+    p{color:gray;}
+    h3{color:gray;}
+    hr{height:10px; background-color: #ebebeb; border: 0px;}
+</style>
+
+<div ng-app="myApp">
+
+    <h1>Nuevo jugador</h1>
+    <p>
+    <p>Nombre: <input type="text" ng-model="nombre" placeholder="Escribir nombre aquí"></p>
+    <p/>
+    <p>Fecha: <input type="data" ng-model="fecha" placeholder="Fecha de nacimiento"></p>
+    <p/>
+    <p>Equipo : <input type="text" ng-model="team" placeholder="Escribir equipo aquí"></p>
+    <p/>
+    <p>Número de canastas: <input type="text" ng-model="canastas" placeholder="Escribir nº de canastas aquí"></p>
+    <p/>
+    <p>Número de rebotes : <input type="text" ng-model="rebotes" placeholder="Escribir nº de rebotes aquí"></p>
+    <p/>
+    <p>Número de asistencias : <input type="text" ng-model="asist" placeholder="Escribir nº de asistencias aquí"></p>
+
+    <hr>
+
+    <h3>{{nombre}}</h3>
+    <h3>{{fecha}}</h3>
+    <h3>{{team}}</h3>
+    <h3>{{canastas}}</h3>
+    <h3>{{rebotes}}</h3>
+    <h3>{{asist}}</h3>
+</div>

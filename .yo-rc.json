@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "jugadorEquipo",
+    "packageName": "com.mycompany.myapp",
+    "packageFolder": "com/mycompany/myapp",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "ff880b8cca31260a934a2a28b3c0a44b8a0cec17",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
