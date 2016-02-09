@@ -1,0 +1,27 @@
+<div>
+    <h1>Ejercicio 11</h1>
+    <span>Directiva ng-if aplicada</span>
+    </p>
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>Rebotes</td>
+            <td>Asistencias</td>
+            <td>Nacimiento</td>
+            <td>Posición</td>
+        </tr>
+
+        <tr ng-repeat="x in jugadores">
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.nombreJugador }} </td>
+            <td ng-if="$even">{{ x.nombreJugador }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.numRebotes }} </td>
+            <td ng-if="$even">{{ x.numRebotes }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.numAsistencias }} </td>
+            <td ng-if="$even">{{ x.numAsistencias }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.fechaNacimiento }} </td>
+            <td ng-if="$even">{{ x.fechaNacimiento }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.posicion }} </td>
+            <td ng-if="$even">{{ x.posicion }} </td>
+        </tr>
+    </table>
+</div>

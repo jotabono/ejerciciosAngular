@@ -4,33 +4,40 @@
 
 <form name="myForm" ng-submit="save()">
     <p>Nombre:
-        <input name="nombre" ng-model="nombreJugador" required>
+        <input name="nombre" ng-model="jugador.nombreJugador" required>
         <span ng-show="myForm.nombre.$touched && myForm.nombre.$invalid">* Campo obligatorio.</span>
     </p>
 
     <p>Número de canastas:
-        <input name="canastas" ng-model="numCanastas" required>
+        <input name="canastas" ng-model="jugador.numCanastas" required>
         <span ng-show="myForm.canastas.$touched && myForm.canastas.$invalid">* Campo obligatorio.</span>
     </p>
 
     <p>Número de rebotes:
-        <input name="rebotes" ng-model="numRebotes" required>
+        <input name="rebotes" ng-model="jugador.numRebotes" required>
         <span ng-show="myForm.rebotes.$touched && myForm.rebotes.$invalid">* Campo obligatorio.</span>
     </p>
 
     <p>Número de asistencias:
-        <input name="asist" ng-model="numAsistencias" required>
+        <input name="asist" ng-model="jugador.numAsistencias" required>
         <span ng-show="myForm.asist.$touched && myForm.asist.$invalid">* Campo obligatorio.</span>
     </p>
 
     <p>Fecha de nacimiento:
-        <input type="date" name="nacimiento" ng-model="fechaNacimiento" required>
+        <input type="date" name="nacimiento" ng-model="jugador.fechaNacimiento" required>
         <span ng-show="myForm.nacimiento.$touched && myForm.nacimiento.$invalid">* Campo obligatorio.</span>
     </p>
 
     <p>Posición:
-        <input name="pos" ng-model="posicion" required>
+        <input name="pos" ng-model="jugador.posicion" required>
         <span ng-show="myForm.pos.$touched && myForm.pos.$invalid">* Campo obligatorio.</span>
+    </p>
+
+    <p>Equipos:
+        <select ng-model="jugador.equipo.id" required>
+            <option disabled selected value="">Selecciona un equipo</option>
+        <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombreEquipo}}</option>
+        </select>
     </p>
 
     <button type="submit">Añadir!</button>

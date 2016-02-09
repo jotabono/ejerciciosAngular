@@ -1,0 +1,21 @@
+<div>
+    <h1>Ejercicio 8 (opcional)</h1>
+    <span>Cargando información de jugadores de un equipo determinado.</span>
+    </p>
+    <ul>
+        <li ng-repeat="x in jugadores">
+            {{ x.nombreJugador + ', ' + x.numRebotes + ', ' + x.numAsistencias + ', ' + x.numCanastas + ', ' + x.fechaNacimiento + ', ' + x.posicion }}
+        </li>
+    </ul>
+
+    <select
+        ng-model="string"
+        [name="string"]
+        [multiple="string"]
+        [required="string"]
+        [ng-required="string"]
+        [ng-change="string"]
+        [ng-options="string"]>
+        ...
+    </select>
+</div>

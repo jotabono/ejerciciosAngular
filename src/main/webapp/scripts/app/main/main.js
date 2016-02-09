@@ -120,7 +120,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej7.html'
+                        templateUrl: 'Ej7.html',
+                        controller: 'ej7'
                     }
                 },
                 resolve: {
@@ -135,7 +136,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej9.html'
+                        templateUrl: 'Ej8.html',
+                        controller: 'ej8'
                     }
                 },
                 resolve: {
@@ -166,7 +168,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej10.html'
+                        templateUrl: 'Ej10.html',
+                        controller: 'ej10'
                     }
                 },
                 resolve: {
@@ -181,7 +184,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej11.html'
+                        templateUrl: 'Ej11.html',
+                        controller: 'ej11'
                     }
                 },
                 resolve: {
@@ -196,7 +200,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej12.html'
+                        templateUrl: 'Ej12.html',
+                        controller: 'ej12'
                     }
                 },
                 resolve: {
@@ -211,7 +216,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej13.html'
+                        templateUrl: 'Ej13.html',
+                        controller: 'ej13'
                     }
                 },
                 resolve: {
@@ -226,7 +232,8 @@ angular.module('jugadorEquipoApp')
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'Ej14.html'
+                        templateUrl: 'Ej14.html',
+                        controller: 'ej14'
                     }
                 },
                 resolve: {
@@ -241,8 +248,8 @@ angular.module('jugadorEquipoApp')
             },
             views: {
                 'content@': {
-                    templateUrl: 'ej15.html',
-                    controller: 'creacionCtrl'
+                    templateUrl: 'Ej15.html',
+                    controller: 'ej15'
                 }
             },
             resolve: {

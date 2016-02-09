@@ -1,5 +1,5 @@
-var app = angular.module('jugadorEquipoApp');
-app.controller('creacionCtrl', function($scope, Jugador, Equipo) {
+angular.module('jugadorEquipoApp')
+.controller('ej15', function($scope, Jugador, Equipo) {
     $scope.equipos;
     $scope.getEquipos = function(){
         Equipo.query({},function(result) {
@@ -17,8 +17,8 @@ app.controller('creacionCtrl', function($scope, Jugador, Equipo) {
     var onSaveError = function (result) {
         $scope.isSaving = false;
     };
-});
-app.factory("Jugador",function($resource){
+})
+.factory("Jugador",function($resource){
     return $resource('api/jugadors/:id', {}, {
         'save': {
             method: 'POST',

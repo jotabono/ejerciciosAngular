@@ -1,0 +1,34 @@
+<div ng-init="numCanastas>500">
+
+    <h1>Ejercicio 14</h1>
+    <span>Puedes ordenar la tabla como quieras, clicando en cada atributo.</span>
+    </p>
+
+    <table>
+        <tr>
+            <td ng-click="orderByMe('nombreJugador')">Nombre</td>
+            <td ng-click="orderByMe('numCanastas')">Canastas</td>
+            <td ng-click="orderByMe('numRebotes')">Rebotes</td>
+            <td ng-click="orderByMe('numAsistencias')">Asistencias</td>
+            <td ng-click="orderByMe('fechaNacimiento')">Nacimiento</td>
+            <td ng-click="orderByMe('posicion')">Posición</td>
+
+        </tr>
+
+        <tr ng-repeat="x in jugadores | orderBy:miOrden">
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.nombreJugador }} </td>
+            <td ng-if="$even">{{ x.nombreJugador }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.numCanastas }} </td>
+            <td ng-if="$even">{{ x.numCanastas }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.numRebotes }} </td>
+            <td ng-if="$even">{{ x.numRebotes }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.numAsistencias }} </td>
+            <td ng-if="$even">{{ x.numAsistencias }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.fechaNacimiento }} </td>
+            <td ng-if="$even">{{ x.fechaNacimiento }} </td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{ x.posicion }} </td>
+            <td ng-if="$even">{{ x.posicion }} </td>
+        </tr>
+    </table>
+
+</div>
