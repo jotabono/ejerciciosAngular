@@ -2,6 +2,7 @@ package com.mycompany.myapp.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import com.mycompany.myapp.domain.Equipo;
+import com.mycompany.myapp.domain.Jugador;
 import com.mycompany.myapp.repository.EquipoRepository;
 import com.mycompany.myapp.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
@@ -17,6 +19,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing Equipo.
@@ -92,6 +95,29 @@ public class EquipoResource {
                 equipo,
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    /**
+     * GET  /equipos/:id -> get the "id" equipo and jugadores.
+     */
+
+    @Transactional
+    @RequestMapping(value = "/equipos/{id}/jugadores",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Set<Jugador>> getEquipoJugadores(@PathVariable Long id) {
+        log.debug("REST request to get Equipo : {}", id);
+
+        Equipo equipo = equipoRepository.findOne(id);
+
+        if(equipo == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(
+            equipo.getJugadors(),
+            HttpStatus.OK);
     }
 
     /**
