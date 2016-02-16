@@ -255,5 +255,21 @@ angular.module('jugadorEquipoApp')
             resolve: {
 
             }
-        });
+        })
+            .state('Ej16', {
+                parent: 'site',
+                url: '/Ej16',
+                data: {
+                    authorities: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'Ej16.html',
+                        controller: 'ej16'
+                    }
+                },
+                resolve: {
+
+                }
+            })
     });

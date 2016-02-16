@@ -1,0 +1,20 @@
+<div ng-init="getEquipos()">
+
+<h1>Añadir un equipo: </h1>
+
+<form name="myForm" ng-submit="save()">
+    <p>Nombre del equipo:
+        <input name="nombre" ng-model="equipo.nombreEquipo" required>
+        <span ng-show="myForm.nombre.$touched && myForm.nombre.$invalid">* Campo obligatorio.</span>
+    </p>
+
+    <p>Localidad:
+        <input name="ciudad" ng-model="equipo.localidad" required>
+        <span ng-show="myForm.ciudad.$touched && myForm.ciudad.$invalid">* Campo obligatorio.</span>
+    </p>
+
+    <button type="submit">Añadir!</button>
+
+</form>
+
+</div>
