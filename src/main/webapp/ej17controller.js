@@ -19,13 +19,14 @@ angular.module('jugadorEquipoApp')
         $scope.getTodosJugadores();
     }
 })
-.factory("Jugador",function($resource){
+.factory("Jugador",function($resource, DateUtils){
     return $resource('api/jugadors/:id', {}, {
         'query': { method: 'GET', isArray: true},
         'get': {
             method: 'GET',
             transformResponse: function (data) {
                 data = angular.fromJson(data);
+                data.fechaNacimiento = DateUtils.convertLocaleDateFromServer(data.fechaNacimiento);
                 return data;
             }
         },

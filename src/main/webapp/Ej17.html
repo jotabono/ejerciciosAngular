@@ -32,10 +32,10 @@
             <span ng-show="myForm.asist.$touched && myForm.asist.$invalid">* Campo obligatorio.</span>
         </p>
 
-        <!---- <p>Fecha de nacimiento:
+        <p>Fecha de nacimiento:
             <input type="date" name="nacimiento" ng-model="jugadorSeleccionado.fechaNacimiento" required>
             <span ng-show="myForm.nacimiento.$touched && myForm.nacimiento.$invalid">* Campo obligatorio.</span>
-        </p> !---->
+        </p>
 
         <p>Posición:
             <input name="pos" ng-model="jugadorSeleccionado.posicion" required>
@@ -45,7 +45,6 @@
         <p>Equipos:
             <select ng-model="jugadorSeleccionado.equipo" ng-options="equipo as equipo.nombreEquipo for equipo in equipos track by equipo.id" required>
                 <option disabled selected value="">Selecciona un equipo</option>
-                <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombreEquipo}}</option>
             </select>
         </p>
 
