@@ -1,20 +1,56 @@
-<div ng-init="getEquipos()">
+<div ng-init="getTodosJugadores()">
 
-<h1>Añadir un equipo: </h1>
+    <h1>Ejercicio 17 </h1>
+    <span>Editar jugador: </span>
+    <hr>
 
-<form name="myForm" ng-submit="save()">
-    <p>Nombre del equipo:
-        <input name="nombre" ng-model="equipo.nombreEquipo" required>
-        <span ng-show="myForm.nombre.$touched && myForm.nombre.$invalid">* Campo obligatorio.</span>
+    <p>Jugadores:
+        <select ng-model="selected" ng-change="cargarJugador(selected); getTodosJugadores()" required>
+            <option disabled selected value="">Selecciona un jugador</option>
+            <option ng-repeat="jugador in todosJugadores" value="{{jugador.id}}">{{jugador.nombreJugador}}</option>
+        </select>
     </p>
 
-    <p>Localidad:
-        <input name="ciudad" ng-model="equipo.localidad" required>
-        <span ng-show="myForm.ciudad.$touched && myForm.ciudad.$invalid">* Campo obligatorio.</span>
-    </p>
+    <form name="myForm" ng-submit="update()">
+        <p>Nombre:
+            <input name="nombre" ng-model="jugadorSeleccionado.nombreJugador" required>
+            <span ng-show="myForm.nombre.$touched && myForm.nombre.$invalid">* Campo obligatorio.</span>
+        </p>
 
-    <button type="submit">Añadir!</button>
+        <p>Número de canastas:
+            <input name="canastas" ng-model="jugadorSeleccionado.numCanastas" required>
+            <span ng-show="myForm.canastas.$touched && myForm.canastas.$invalid">* Campo obligatorio.</span>
+        </p>
 
-</form>
+        <p>Número de rebotes:
+            <input name="rebotes" ng-model="jugadorSeleccionado.numRebotes" required>
+            <span ng-show="myForm.rebotes.$touched && myForm.rebotes.$invalid">* Campo obligatorio.</span>
+        </p>
+
+        <p>Número de asistencias:
+            <input name="asist" ng-model="jugadorSeleccionado.numAsistencias" required>
+            <span ng-show="myForm.asist.$touched && myForm.asist.$invalid">* Campo obligatorio.</span>
+        </p>
+
+        <!---- <p>Fecha de nacimiento:
+            <input type="date" name="nacimiento" ng-model="jugadorSeleccionado.fechaNacimiento" required>
+            <span ng-show="myForm.nacimiento.$touched && myForm.nacimiento.$invalid">* Campo obligatorio.</span>
+        </p> !---->
+
+        <p>Posición:
+            <input name="pos" ng-model="jugadorSeleccionado.posicion" required>
+            <span ng-show="myForm.pos.$touched && myForm.pos.$invalid">* Campo obligatorio.</span>
+        </p>
+
+        <p>Equipos:
+            <select ng-model="jugadorSeleccionado.equipo" ng-options="equipo as equipo.nombreEquipo for equipo in equipos track by equipo.id" required>
+                <option disabled selected value="">Selecciona un equipo</option>
+                <option ng-repeat="equipo in equipos" value="{{equipo.id}}">{{equipo.nombreEquipo}}</option>
+            </select>
+        </p>
+
+        <button type="submit">Actualizar!</button>
+
+    </form>
 
 </div>

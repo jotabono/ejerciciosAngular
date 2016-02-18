@@ -1,21 +1,36 @@
 angular.module('jugadorEquipoApp')
-.controller('ej16', function($scope, Equipo) {
-    $scope.equipo;
-    $scope.save = function () {
-        $scope.isSaving = true;
-        Equipo.save($scope.equipo, onSaveSuccess, onSaveError);
+.controller('ej17', function($scope, Jugador, Equipo) {
+    $scope.todosJugadores;
+    $scope.jugadorSeleccionado;
+    $scope.equipos = Equipo.query();
+
+    $scope.getTodosJugadores = function(){
+        $scope.todosJugadores = Jugador.query();
     };
-    var onSaveSuccess = function (result) {
-        $scope.isSaving = false;
+    $scope.cargarJugador = function(id){
+        Jugador.get({id: id},function(result){
+            $scope.jugadorSeleccionado = result;
+        });
     };
-    var onSaveError = function (result) {
-        $scope.isSaving = false;
+    $scope.update = function(){
+        Jugador.update($scope.jugadorSeleccionado, updateOK);
     };
+    var updateOK = function(){
+        $scope.getTodosJugadores();
+    }
 })
-.factory("Equipo",function($resource){
-    return $resource('api/equipos/:id', {}, {
-        'save': {
-            method: 'POST',
+.factory("Jugador",function($resource){
+    return $resource('api/jugadors/:id', {}, {
+        'query': { method: 'GET', isArray: true},
+        'get': {
+            method: 'GET',
+            transformResponse: function (data) {
+                data = angular.fromJson(data);
+                return data;
+            }
+        },
+        'update': {
+            method: 'PUT',
             transformRequest: function (data) {
                 return angular.toJson(data);
             }
